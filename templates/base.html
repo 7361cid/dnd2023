@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Пробник #1</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/style_new.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="stylesheet" href="/static/css/justified-nav.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--[if lt IE 9]>
+		 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script >
+		 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<title>Изменение цвета текста</title>
+  <style>
+   .colortext {
+     color: red; /* Красный цвет выделения */
+   }
+  </style>
+
+
+  </head>
+<body>
+
+<section id="header">
+
+<header>
+  <div class="row" ><div class="pull-right">{% block user_links %} {% endblock %}</div></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 logo">Магазин для авантюристов</div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+<div class="row">
+  <nav>
+    <ul class="nav nav-justified">
+      {% block navigation %}  {% endblock %}
+    </ul>
+  </nav>
+</div>
+</div>
+
+  <section id="slider">
+  <div class="container">
+     {% block content_center %}  {% endblock %}
+     <div class="row">
+     <div id="carousel-example-generic" class="carousel slide carousel-fade carousel-animate carousel-bg" data-ride="carousel">
+
+     <ol class="carousel-indicators">
+       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+       <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+     </ol>
+
+     <div class="carousel-inner" role="listbox">
+       <div class="item active" style="background-image: url(/static/images/Кузцен_Фон.jpg)">
+         <div class="carousel-caption">
+           <div class="hero">
+             <hgroup class="zoomInDown animated">
+               <h2 class="fadeInLeft animated">Новые товары</h2>
+               <h3 class="slideInRight animated">Простое оружие и не только</h3>
+             </hgroup>
+             <button class="btn btn-hero btn-lg bounceInUp animated" role="button">Кнопка</button>
+           </div>
+         </div>
+       </div>
+       <div class="item" style="background-image: url(/static/images/Алхимик_Фон.png) ; background-repeat: no-repeat; background-size: cover ;">
+         <div class="carousel-caption">
+           <div class="hero fadeInUp animated">
+           <hgroup>
+             <h2>Новые зелья!</h2>
+             <h3>Зелья вынослевости и магии!</h3>
+           </hgroup>
+           <button class="btn btn-hero btn-lg zoomIn animated" role="button">Кнопка</button>
+           </div>
+         </div>
+       </div>
+       <div class="item" style="background-image: url(/static/images/Девушка_торговка.png) ; background-repeat: no-repeat; background-size: cover ;">
+         <div class="carousel-caption">
+           <div class="hero rollIn animated">
+             <hgroup class="rotateInDownRight animated">
+               <h2>Новые бузделушки!</h2>
+               <h3>Кто-то называет это мусором, но для меня это настроящие сокровище</h3>
+             </hgroup>
+             <button class="btn btn-hero btn-lg" role="button">Кнопка</button>
+           </div>
+         </div>
+       </div>
+     </div>
+     </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-left hidden-xs">
+          <div id="copyright">
+            <p id="copyright-block">© ВТФ</p>
+          </div>
+        </div>
+        <div class="col-md-6 text-right">
+          FOOTER
+        </div>
+      </div>
+    </div>
+  </footer>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="static/js/bootstrap.js"></script>
+</body>
+</html>

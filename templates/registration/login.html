@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block user_links %}
+                {% if user.is_authenticated %}
+                    <td class="table_column_user_links">
+                        <a href="{% url 'user' pk=user.pk %}"><img src="static/{{ user_avatar }}" height=35 width=35></a>
+                        <a href="{% url 'logout' %}"><img src="/static/images/logout.png" alt="Whitesquare logo"></a>
+                    </td>
+                {% else %}
+                  <td><div><button class="btn btn-dark btn-lg" type="submit" onclick="window.location.href = '{% url 'login' %}';">Log In</button>
+                      <button class="btn btn-dark btn-lg" type="submit" onclick="window.location.href = '{% url 'signup' %}';">Sign up</button></div></td>
+            {% endif %}
+{% endblock %}
+
+{% block content_center %}
+ <div id="login">
+        <form name="LoginForm" action="/login/" method="post">
+        {% csrf_token %}
+        <div class="control-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input type="text" id="username" name="username"  placeholder="Username">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block search %}
+<table>
+        <tr>
+            <td class="table_column">
+                <form name="search" action="/" method="get">
+                    <div class="search">
+                      <input type="search" placeholder="Search" name="q">
+                      <input class="search_button"  type="submit" value="GO">
+                    </div>
+                </form>
+            </td>
+        </tr>
+</table>
+{% endblock %}

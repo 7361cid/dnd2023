@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content_header %}
+            <td class="table_column">
+                <a id="logo" href="{% url 'home' %}"><img src="/static/images/logo.png" height=60 width=100 alt="Whitesquare logo"></a>
+            </td>
+{% endblock %}
+
+{% block user_links %}
+                {% if user.is_authenticated %}
+                    <td class="table_column_user_links">
+                        <a href="{% url 'user' pk=user.pk %}"><img src="static/{{ user_avatar }}" height=35 width=35></a>
+                        <a href="{% url 'logout' %}"><img src="/static/images/logout.png" alt="Whitesquare logo"></a>
+                    </td>
+                {% else %}
+                  <td><div><button class="btn btn-dark btn-lg" type="submit" onclick="window.location.href = '{% url 'login' %}';">Log In</button>
+                      <button class="btn btn-dark btn-lg" type="submit" onclick="window.location.href = '{% url 'signup' %}';">Sign up</button></div></td>
+            {% endif %}
+{% endblock %}
+
+{% block navigation %}
+      <li class="active"><a href="{% url 'home' %}">Главная</a></li>
+      <li>Магические товары</li>
+      <li>Обычные вещи</li>
+{% endblock %}
